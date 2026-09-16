@@ -1,6 +1,6 @@
 ## M1 — Walkable Skeleton
 
-- [ ] M1.1 Initialize Vite + TypeScript + Preact project with `web-ext` config, `manifest.json` (MV3, `browser.*`, `background.scripts`, `host_permissions` for 5 chat domains + CDN origin placeholder), and `commands` for `Alt+Shift+S` — verify `web-ext lint` passes with zero errors and zero warnings
+- [x] M1.1 Initialize Vite + TypeScript + Preact project with `web-ext` config, `manifest.json` (MV3, `browser.*`, `background.scripts`, `host_permissions` for 5 chat domains + CDN origin placeholder), and `commands` for `Alt+Shift+S` — verify `web-ext lint` passes with zero errors and zero warnings
 - [ ] M1.2 Create content script that injects a Shadow DOM root on `document.body`, renders a centered palette (vanilla JS or Preact) toggled by the registered command, and logs "palette ready" — verify palette opens/closes with `Alt+Shift+S` on `https://chat.openai.com/` and does NOT open on `https://example.com/`
 - [ ] M1.3 Hard-code an array of three skills (`opsx:propose`, `opsx:plan`, `opsx:review`) with minimal fields (`name`, `description`) and implement client-side filter on `/namespace:command` prefix — verify typing `/opsx:` shows only the three skills, filtering completes in <50ms
 - [ ] M1.4 Implement keyboard navigation: `ArrowUp`/`ArrowDown` moves selection, `Enter` triggers copy, `Escape` closes palette without clearing input — verify all three keys behave as specified

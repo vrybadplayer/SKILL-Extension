@@ -1,0 +1,62 @@
+{
+  "manifest_version": 3,
+  "name": "Agentic Skills Injector",
+  "version": "1.0.0",
+  "description": "Inject Agentic SKILLS into web-based AI chatbots (Gemini, ChatGPT, Qwen) by copying skill markdown to clipboard.",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://gemini.google.com/*",
+        "https://chat.openai.com/*",
+        "https://chatgpt.com/*",
+        "https://chat.qwen.ai/*",
+        "https://qwen.ai/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "host_permissions": [
+    "https://gemini.google.com/*",
+    "https://chat.openai.com/*",
+    "https://chatgpt.com/*",
+    "https://chat.qwen.ai/*",
+    "https://qwen.ai/*",
+    "https://*.github.io/*"
+  ],
+  "commands": {
+    "toggle-palette": {
+      "suggested_key": {
+        "default": "Alt+Shift+S"
+      },
+      "description": "Open/close the Agentic Skills palette"
+    }
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "permissions": [
+    "storage",
+    "alarms",
+    "activeTab",
+    "scripting"
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "agentic-skills@nousresearch.example",
+      "strict_min_version": "109.0"
+    }
+  }
+}

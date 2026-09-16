@@ -1,0 +1,34 @@
+{
+  "name": "firefox-agentic-skills-extension",
+  "version": "1.0.0",
+  "description": "Firefox WebExtension to inject Agentic SKILLS into web-based AI chatbots",
+  "type": "module",
+  "scripts": {
+    "dev": "vite build --mode development --watch",
+    "build": "vite build --mode production",
+    "lint": "web-ext lint --source-dir=dist",
+    "start": "web-ext run --source-dir=dist",
+    "build:zip": "web-ext build --source-dir=dist --overwrite-dest --artifacts-dir=web-ext-artifacts",
+    "sign": "web-ext sign --source-dir=dist --artifacts-dir=web-ext-artifacts"
+  },
+  "keywords": [
+    "firefox",
+    "webextension",
+    "ai",
+    "skills",
+    "clipboard"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@preact/preset-vite": "^2.10.6",
+    "@types/firefox-webext-browser": "^120.0.0",
+    "@types/node": "^20.10.0",
+    "canvas": "^3.2.3",
+    "preact": "^10.19.0",
+    "typescript": "^5.3.0",
+    "vite": "^5.0.0",
+    "vite-plugin-static-copy": "^1.0.6",
+    "web-ext": "^7.10.0"
+  }
+}
